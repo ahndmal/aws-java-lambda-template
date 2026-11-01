@@ -8,12 +8,28 @@ package example;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+import java.io.IOException;
+import java.net.URL;
+
 public class Hello implements RequestHandler<Object, Response> {
     public Hello() {
     }
 
     public Response handleRequest(Object input, Context context) {
-        return new Response("Hello from Lambda 4!", 200);
+
+        context.getLogger().log("test");
+
+        String data = "aaa";
+
+        try {
+
+          
+
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        return new Response(data, 200);
     }
 }
 
